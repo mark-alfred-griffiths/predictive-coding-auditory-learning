@@ -11,7 +11,7 @@ requires-python = ">=3.11"
 dependencies = ["jax>=0.4.38", "numpy>=1.24", "matplotlib>=3.7"]
 authors = [{ name = "Mark A. Griffiths" }]
 keywords = ["computational neuroscience", "predictive coding", "auditory learning", "reproducibility"]
-classifiers = ["Programming Language :: Python :: 3", "Intended Audience :: Science/Research", "License :: Other/Proprietary License"]
+classifiers = ["Programming Language :: Python :: 3", "Intended Audience :: Science/Research", "License :: OSI Approved :: MIT License"]
 
 [project.optional-dependencies]
 test = ["pytest>=7"]

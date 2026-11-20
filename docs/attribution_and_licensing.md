@@ -1,8 +1,8 @@
 # Ownership, attribution, security and publication gate
 
-## Licensing decision: on hold
+## MIT licence selected; ownership and public-release review pending
 
-The source archive did not contain an applicable root `LICENSE` file. The curated staging repository therefore intentionally contains **no LICENSE** and does not grant reuse/distribution rights beyond existing law and permissions. **Do not make it public as a substitute for legal/ownership review.** A possible software licence, subject to the rights holder's approval, is MIT; this is a proposal, not a licence selection or a legal conclusion.
+The source archive did not contain an applicable root `LICENSE` file. This curated staging repository now contains an [MIT License](../LICENSE) with copyright notice for Mark A. Griffiths, and the package metadata identifies MIT. This licence selection **does not establish that all original code can lawfully be licensed by this copyright holder**. Confirm the necessary rights and permissions before any public release; do not treat the presence of `LICENSE` as public-release approval.
 
 Confirm: (1) ownership of the original research code and whether employment/institutional or collaborator rights affect redistribution; (2) whether code modules contain externally supplied fragments; (3) attribution for independent guidance from Christopher Buckley and Karl Friston, the UBEL proposal's association with Peter Howell, and contributors, without suggesting the professors authored the software without evidence; (4) the licensing terms of JAX, NumPy, Matplotlib, Pytest and optional external JPC. JPC is **not bundled**.
 
@@ -16,7 +16,7 @@ Before any change to public visibility, inspect all files and complete Git histo
 
 1. Verify a clean installation and deterministic local tests on a *fresh clone*, including the user's own PyCharm workstation.
 2. Inspect private GitHub Actions result, test count, software versions and exact source SHA.
-3. Independently review all demonstration output, claims and negative controls; confirm source ownership and approve an actual licence.
+3. Independently review all demonstration output, claims and negative controls; confirm source ownership and permission to distribute under the selected MIT licence.
 4. Audit the final complete Git history, credentials, private documents and attribution.
 5. Request **explicit user permission** for `private` → `public`. No implied permission from pushing to a private repository.
 6. After release, verify anonymous access and installation from the public URL.

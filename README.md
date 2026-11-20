@@ -25,7 +25,7 @@ Two small examples export inspectable CSV and JSON and one plot without external
 
 ## Research contribution and provenance
 
-This repository curates the original predictive-coding computational investigation and numerical validation carried out by Mark A. Griffiths. It retains the tested underlying model code unchanged and adds separately testable example entry points and documentation. Prior independent predictive-coding work was undertaken with guidance from Professors Christopher Buckley and Karl Friston; the UBEL doctoral proposal concerns proposed work with Professor Peter Howell. See [provenance](docs/provenance.md) and the [attribution/licensing review](docs/attribution_and_licensing.md); **no licence has yet been approved**, so this repository is not authorised for public release or general reuse.
+This repository curates the original predictive-coding computational investigation and numerical validation carried out by Mark A. Griffiths. It retains the tested underlying model code unchanged and adds separately testable example entry points and documentation. Prior independent predictive-coding work was undertaken with guidance from Professors Christopher Buckley and Karl Friston; the UBEL doctoral proposal concerns proposed work with Professor Peter Howell. See [provenance](docs/provenance.md), the [MIT License](LICENSE), and the [attribution/licensing review](docs/attribution_and_licensing.md). The curated code is distributed under the MIT License, subject to verification of any third-party, collaborator or institutional rights. **The repository remains private staging and is not authorised for public release.**
 
 ## Install and run (CPU — PyCharm compatible)
 

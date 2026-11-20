@@ -29,7 +29,7 @@ See machine-readable [`source_hashes.json`](source_hashes.json) for SHA256 hashe
 
 | Staged path | Treatment |
 | --- | --- |
-| `README.md`, `pyproject.toml`, `.gitignore`, `CITATION.cff` | New, self-contained project metadata and instructions; no `LICENSE` pending approval |
+| `README.md`, `pyproject.toml`, `.gitignore`, `CITATION.cff`, `LICENSE` | New, self-contained project metadata and instructions, including the selected MIT licence; source ownership and public-release approval still require review |
 | `constraints-cpu.txt`, `.github/workflows/tests.yml` | Tested CPU package versions and proposed CI (GitHub-run pending) |
 | `examples/__init__.py`, `examples/truncated_inference.py`, `examples/auditory_learning.py` | Small example wrappers; original algorithms unchanged |
 | `tests/test_curated_examples.py` | Independent checks of both examples and their outputs |

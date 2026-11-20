@@ -10,4 +10,4 @@ Source modules and source tests are copied **byte-for-byte**. They keep their hi
 
 No native JPC code or forecasting benchmark is vendored. No original `.git` metadata, historical run directories, participant data, unreleased proposal documents, collaborator communications, or GPU CSV archives are copied. The historical source's exact model-recovery and forecasting results remain **reported historical evidence**, not validated claims on the fresh curated tests.
 
-**Original main and feature branch remain unchanged.** This is a new local repository with one new initial commit. It is deliberately not forked/mirrored, and any later private GitHub repository must start empty and receive only this fresh history.
+**Original main and feature branch remain unchanged.** This is a new local repository with fresh Git history beginning with a curated initial commit. It is deliberately not forked/mirrored, and any later private GitHub repository must start empty and receive only this fresh history.
