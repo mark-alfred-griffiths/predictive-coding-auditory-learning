@@ -32,10 +32,10 @@ After creating the initial fresh Git history, use `git clone` into a new directo
 
 ## CI and optional JPC
 
-`.github/workflows/tests.yml` is configured to install the package in a clean Linux Python 3.13 CPU environment and run the same tests and examples. **Curated CPU validation #2 passed on GitHub Actions at commit `58fb9855f54ad2c07feb8e8363575dce933a732a` on 20 November 2026**, as confirmed by the owner-provided screenshot. The earlier run at `affe7b8` failed only at wheel building due to missing setuptools under `--no-build-isolation`; the passing workflow removed that option. This documentation patch needs its own new CI run before being certified.
+`.github/workflows/tests.yml` is configured to install the package in a clean Linux Python 3.13 CPU environment and run the same tests and examples. **Curated CPU validation #3 passed on private GitHub Actions at commit `f7644b235d1a7f9b33acf7278e2c9b956c5e6e52` on 20 November 2026**, as confirmed by the owner-provided screenshot. The earlier run at `affe7b8` failed only at wheel building due to missing setuptools under `--no-build-isolation`; the passing workflow removed that option at `58fb985`. Any later documentation-only release-review commit needs a new CI run before the final commit can be declared checked.
 
 The main demonstrations use JAX's analytic Gaussian backend. The strictly optional `jpc_adapter.py` imports real upstream JPC at runtime and raises a `RuntimeError` if requested but missing; it must never silently substitute analytical JAX. This curated version has **not** independently retested the original pinned JPC native CPU energy integration, upstream ODE solver, GPU benchmarking, or exploratory model-recovery study.
 
 ## Optional NVIDIA GPU validation
 
-The standard reference remains CPU-only. For an explicitly separate RTX 3060 Ti/CUDA 13 smoke test, see [GPU validation](gpu_validation.md). It verifies actual GPU placement and runs the same tests and synthetic examples with JAX forced to CUDA; GPU execution is not a substitute for the CPU numerical reference, and has not been tested by this document author on the user's GPU.
+The standard reference remains CPU-only. For the independently configured RTX 3060 Ti/CUDA 13 smoke test, see [GPU validation](gpu_validation.md). The owner-supplied log for `f7644b2` confirms `cuda:0` device placement, 28 passing tests and 5/5 matching CPU/CUDA output comparisons at `atol=rtol=1e-5`; GPU execution does not supersede the CPU scientific reference. No CUDA test was physically run on the document author's computer.

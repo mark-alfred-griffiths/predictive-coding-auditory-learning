@@ -1,6 +1,6 @@
-# Optional NVIDIA GPU execution — **not** part of the validated CPU reference
+# Optional NVIDIA GPU execution — separate from the validated CPU reference
 
-**Status:** The repository's CPU tests and GitHub Actions passed at `58fb985` on 20 November 2026. The commands below are *instructions for a new, separately recorded workstation test*, **not a claim that the curated code has already passed on CUDA**. Keep the original `pc-auditory` and `pc-auditory-verify` environments unchanged. Neither the optional upstream JPC adapter nor the exploratory path-integral benchmark is tested here.
+**Observed workstation result (20 November 2026):** The owner ran `scripts/validate_gpu.sh` at `f7644b235d1a7f9b33acf7278e2c9b956c5e6e52` in a separate Python 3.13.18 / JAX 0.9.0.1 CUDA-13 environment. The RTX 3060 Ti was reported as `cuda:0` under NVIDIA driver 595.104.02; original and compiled inference kernels were placed on the GPU; 18 source hashes matched, 28 tests passed, and all five CPU/CUDA comparison files matched within `atol=rtol=1e-5`. These are owner-supplied workstation logs, not a second independent hardware run. Keep the original `pc-auditory` and `pc-auditory-verify` environments unchanged. Neither the optional upstream JPC adapter nor the exploratory path-integral benchmark is tested here.
 
 ## Prerequisites and installation (Pop!_OS, RTX 3060 Ti)
 

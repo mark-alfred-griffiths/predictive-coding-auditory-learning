@@ -33,7 +33,7 @@ git clone https://github.com/mark-alfred-griffiths/predictive-coding-auditory-le
 5. Set arguments to `--outdir results/truncated_inference` or `--seed 2027 --trials 80 --outdir results/auditory_learning`.
 6. Run tests via `python -m pytest -q` in the terminal or PyCharm's pytest runner. For reproducibility, save the terminal output and `git rev-parse HEAD` together.
 
-In the terminal you can execute `bash scripts/validate_local.sh`. The standard workflow is **CPU-only**, even on the NVIDIA RTX 3060 Ti machine. The owner independently tested the development and fresh-clone Conda environments (28/28 tests), and private GitHub Actions run #2 passed at `58fb985`. For a separate CUDA-only check, follow [GPU validation](gpu_validation.md); do not modify the shared CPU environment or treat a CUDA test as new biological evidence.
+In the terminal you can execute `bash scripts/validate_local.sh`. The standard workflow is **CPU-only**, even on the NVIDIA RTX 3060 Ti machine. The owner independently tested the development and fresh-clone Conda environments (28/28 tests), and private GitHub Actions run #3 passed at `f7644b2`; the owner also validated a separate CUDA environment on RTX 3060 Ti (28 tests, five matching output files). For a separate CUDA-only check, follow [GPU validation](gpu_validation.md); do not modify the shared CPU environment or treat a CUDA test as new biological evidence.
 
 ## Everyday pull/test/commit/push cycle
 

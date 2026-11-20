@@ -25,7 +25,7 @@ Two small examples export inspectable CSV and JSON and one plot without external
 
 ## Research contribution and provenance
 
-This repository curates the original predictive-coding computational investigation and numerical validation carried out by Mark A. Griffiths. It retains the tested underlying model code unchanged and adds separately testable example entry points and documentation. Prior independent predictive-coding work was undertaken with guidance from Professors Christopher Buckley and Karl Friston; the UBEL doctoral proposal concerns proposed work with Professor Peter Howell. See [provenance](docs/provenance.md), the [MIT License](LICENSE), and the [attribution/licensing review](docs/attribution_and_licensing.md). The curated code is distributed under the MIT License, subject to verification of any third-party, collaborator or institutional rights. **The repository remains private staging and is not authorised for public release.**
+This repository curates the original predictive-coding computational investigation and numerical validation carried out by Mark A. Griffiths. It retains the tested underlying model code unchanged and adds separately testable example entry points and documentation. Prior independent predictive-coding work was undertaken with guidance from Professors Christopher Buckley and Karl Friston; the UBEL doctoral proposal concerns proposed work with Professor Peter Howell. See [provenance](docs/provenance.md), the [MIT License](LICENSE), and the [attribution/licensing review](docs/attribution_and_licensing.md). The owner has confirmed independent development outside paid appointments and commissioned work; the curated code carries his selected MIT License. This owner statement does not replace a review of third-party fragments or the final Git history. **The repository remains private staging and is not authorised for public release.**
 
 ## Install and run (CPU — PyCharm compatible)
 
@@ -50,7 +50,7 @@ python -m pytest -q
 python -m pip wheel --no-deps -w dist .
 ```
 
-Run `bash scripts/validate_local.sh` to execute the same local checks and both examples. The development and separate fresh-clone Conda environments on Pop!_OS passed 28 tests, and **Curated CPU validation #2 passed on GitHub Actions at commit `58fb9855f54ad2c07feb8e8363575dce933a732a`** (owner-supplied logs/screenshots, 20 November 2026). The successful CI run predates this documentation patch: rerun CI on the new commit before claiming that revision is verified.
+Run `bash scripts/validate_local.sh` to execute the CPU checks and examples. The owner confirmed **28/28 CPU tests**, a separate CUDA-13 execution on the RTX 3060 Ti with **28/28 tests**, **18/18 original-source hashes**, and matching CPU/GPU results for five JSON/CSV outputs (`atol=rtol=1e-5`). **Curated CPU validation #3 passed on private GitHub Actions at commit `f7644b235d1a7f9b33acf7278e2c9b956c5e6e52`** (owner-supplied log/screenshots, 20 November 2026). A later documentation-only commit requires its own successful GitHub Actions run before release.
 
 ## What these experiments demonstrate
 
