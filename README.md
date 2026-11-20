@@ -25,7 +25,7 @@ Two small examples export inspectable CSV and JSON and one plot without external
 
 ## Research contribution and provenance
 
-This repository curates the original predictive-coding computational investigation and numerical validation carried out by Mark A. Griffiths. It retains the tested underlying model code unchanged and adds separately testable example entry points and documentation. Prior independent predictive-coding work was undertaken with guidance from Professors Christopher Buckley and Karl Friston; the UBEL doctoral proposal concerns proposed work with Professor Peter Howell. See [provenance](docs/provenance.md), the [MIT License](LICENSE), and the [attribution/licensing review](docs/attribution_and_licensing.md). The owner has confirmed independent development outside paid appointments and commissioned work; the curated code carries his selected MIT License. This owner statement does not replace a review of third-party fragments or the final Git history. **The repository remains private staging and is not authorised for public release.**
+This repository curates the original predictive-coding computational investigation and numerical validation carried out by Mark A. Griffiths. It retains the tested underlying model code unchanged and adds separately testable example entry points and documentation. Prior independent predictive-coding work was undertaken with guidance from Professors Christopher Buckley and Karl Friston; the UBEL doctoral proposal concerns proposed work with Professor Peter Howell. See [provenance](docs/provenance.md), the [MIT License](LICENSE), and the [attribution/licensing review](docs/attribution_and_licensing.md). The owner has confirmed independent development outside paid appointments and commissioned work; the curated code carries his selected MIT License. This owner statement does not replace a review of third-party fragments or the final Git history. **Release status:** This curated repository is public; the original `ubel-jpc` source repository remains private. The linked release-review notes document the scope and limits of checks performed before publication.
 
 ## Install and run (CPU — PyCharm compatible)
 
@@ -50,7 +50,7 @@ python -m pytest -q
 python -m pip wheel --no-deps -w dist .
 ```
 
-Run `bash scripts/validate_local.sh` to execute the CPU checks and examples. The owner confirmed **28/28 CPU tests**, a separate CUDA-13 execution on the RTX 3060 Ti with **28/28 tests**, **18/18 original-source hashes**, and matching CPU/GPU results for five JSON/CSV outputs (`atol=rtol=1e-5`). **Curated CPU validation #3 passed on private GitHub Actions at commit `f7644b235d1a7f9b33acf7278e2c9b956c5e6e52`** (owner-supplied log/screenshots, 20 November 2026). A later documentation-only commit requires its own successful GitHub Actions run before release.
+Run `bash scripts/validate_local.sh` to execute the CPU checks and examples. The owner confirmed **28/28 CPU tests**, a separate CUDA-13 execution on the RTX 3060 Ti with **28/28 tests**, **18/18 original-source hashes**, and matching CPU/GPU results for five JSON/CSV outputs (`atol=rtol=1e-5`). **Curated CPU validation #3 passed on private GitHub Actions at commit `f7644b235d1a7f9b33acf7278e2c9b956c5e6e52`** (owner-supplied log/screenshots, 20 November 2026). The cited CI validation applies to the recorded historical commit; consult the repository's Actions tab for the status of later commits.
 
 ## What these experiments demonstrate
 
@@ -73,6 +73,6 @@ The proposed doctoral work would test whether experimentally constrained process
 - [Validation procedure](docs/validation.md) and [results/limitations](docs/results_and_limitations.md)
 - [Source provenance](docs/provenance.md) and [file-by-file manifest](docs/file_manifest.md)
 - [PyCharm/Git synchronisation and local validation](docs/local_pycharm_and_git.md) and [optional GPU validation](docs/gpu_validation.md)
-- [Licensing and privacy release gate](docs/attribution_and_licensing.md)
+- [Licensing, attribution and historical release checklist](docs/attribution_and_licensing.md)
 
-**Release status: PRIVATE STAGING. Do not make public without a new explicit approval after all checks.**
+**Release status: PUBLIC.** This repository provides reproducible synthetic demonstrations, not human experimental results or a claim of unique model identification. Public access does not imply that every historical release-checklist item was independently verified. The original `ubel-jpc` remains private.
