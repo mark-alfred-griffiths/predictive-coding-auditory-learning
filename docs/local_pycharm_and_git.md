@@ -2,9 +2,9 @@
 
 This is the intended **regular development workflow**, not only a one-off release test. Keep the private original `ubel-jpc` and the curated repository in **different directories and Git remotes**. Do not copy `.git` from the original project.
 
-## First import and private GitHub remote
+## Clone the existing private GitHub remote
 
-When the new private GitHub repository exists, the **preferred** setup is an ordinary clean clone:
+The private GitHub repository already exists. The **preferred** setup for another machine is an ordinary clean clone:
 
 ```bash
 mkdir -p ~/PycharmProjects
@@ -22,25 +22,18 @@ This SSH form requires configured SSH keys. With HTTPS authentication instead, u
 git clone https://github.com/mark-alfred-griffiths/predictive-coding-auditory-learning.git
 ```
 
-**If using the supplied local staging ZIP first:** unpack it and open the contained project directory directly. Its `.git` folder is a **fresh history**, not copied private history. Create an **empty private** repository with that name on GitHub (do not initialise it with a README, licence or `.gitignore`), then from the unpacked root:
-
-```bash
-git remote add origin git@github.com:mark-alfred-griffiths/predictive-coding-auditory-learning.git
-git push -u origin main
-```
-
-Check `git remote -v` first: use `git remote set-url origin ...` only if you have confirmed the existing remote is wrong. Never add the old `ubel-jpc` as `origin`. The user must create the private GitHub repo because the current GitHub connector cannot create repositories; **these setup commands do not claim that the remote already exists**.
+**Existing working copies:** the owner already established an upstream `origin/main` and an independent clean clone. Use `git pull --ff-only origin main` in each checkout, not `git init` and not another repository creation. Check `git remote -v` first; never add the old `ubel-jpc` as `origin`. Keep the GitHub repository private.
 
 ## PyCharm environment
 
 1. Open this directory with **File → Open**; verify its Git root points to the new curated repository only.
-2. Choose **Settings → Project → Python Interpreter → Add Interpreter → Virtualenv**. Select local Python 3.13 and a new `.venv` *inside this repo* (or configure your conda 3.13 interpreter).
-3. In the integrated terminal (with `.venv` activated), run `python -m pip install -e '.[test]' -c constraints-cpu.txt`.
+2. Choose **Settings → Project → Python Interpreter → Add Interpreter → Existing Conda** and select `pc-auditory` (or `pc-auditory-verify` for the separate verification clone). The owner used Python 3.13.18. A virtual environment remains an unverified alternative.
+3. In the integrated terminal, run `conda activate pc-auditory` (or `pc-auditory-verify`) and `python -m pip install -e '.[test]' -c constraints-cpu.txt`. Verify the interpreter with `which python` and dependencies with `python -m pip check`.
 4. Set Run Configuration **Script path** to `examples/truncated_inference.py` or `examples/auditory_learning.py`. Working directory must be the repository root; environment variables: `JAX_PLATFORMS=cpu;JAX_ENABLE_X64=1;MPLBACKEND=Agg` (enter as separate pairs in the UI).
 5. Set arguments to `--outdir results/truncated_inference` or `--seed 2027 --trials 80 --outdir results/auditory_learning`.
 6. Run tests via `python -m pytest -q` in the terminal or PyCharm's pytest runner. For reproducibility, save the terminal output and `git rev-parse HEAD` together.
 
-In the terminal you can execute `bash scripts/validate_local.sh`. The standard workflow is **CPU-only**, even on your NVIDIA RTX 3060 Ti machine. GPU experiments require a separate, explicitly verified JAX CUDA environment and must not change the shared CPU baselines.
+In the terminal you can execute `bash scripts/validate_local.sh`. The standard workflow is **CPU-only**, even on the NVIDIA RTX 3060 Ti machine. The owner independently tested the development and fresh-clone Conda environments (28/28 tests), and private GitHub Actions run #2 passed at `58fb985`. For a separate CUDA-only check, follow [GPU validation](gpu_validation.md); do not modify the shared CPU environment or treat a CUDA test as new biological evidence.
 
 ## Everyday pull/test/commit/push cycle
 

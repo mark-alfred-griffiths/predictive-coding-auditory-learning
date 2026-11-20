@@ -21,4 +21,4 @@ No human behavioural finding, neural mechanism identification, human power calcu
 
 ## Unverified parts of this staging project
 
-The native external JPC energy adapter is retained for optional future comparison but is **not exercised** in the standard CPU suite. GitHub Actions status is unknown until a private GitHub workflow run completes. Earlier main-branch and forecasting-branch claims are documented source evidence, not substitute tests for the curated snapshot.
+The native external JPC energy adapter is retained for optional future comparison but is **not exercised** in the standard CPU suite. The owner reported a successful private GitHub Actions CPU run at `58fb9855f54ad2c07feb8e8363575dce933a732a` (20 November 2026); no CUDA/GPU result has yet been certified for this curated project. Earlier main-branch and forecasting-branch claims are documented source evidence, not substitute tests for the curated snapshot.

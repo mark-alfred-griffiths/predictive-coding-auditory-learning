@@ -15,5 +15,5 @@ python -m compileall -q src tests examples
 python -m pytest -q
 python examples/truncated_inference.py --outdir results/truncated_inference
 python examples/auditory_learning.py --seed 2027 --trials 80 --outdir results/auditory_learning
-python -m pip wheel --no-deps --no-build-isolation -w dist .
+python -m pip wheel --no-deps -w dist .
 printf '\nValidation command sequence completed. Review outputs and exact SHA above.\n'

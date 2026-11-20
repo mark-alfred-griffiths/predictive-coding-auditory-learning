@@ -32,25 +32,25 @@ This repository curates the original predictive-coding computational investigati
 Use **Python 3.13** to reproduce the environment tested for this curated version. From the repository root:
 
 ```bash
-python3.13 -m venv .venv
-source .venv/bin/activate
+conda create -n pc-auditory python=3.13 pip setuptools wheel -y
+conda activate pc-auditory
 python -m pip install -e '.[test]' -c constraints-cpu.txt
 export JAX_PLATFORMS=cpu JAX_ENABLE_X64=1 MPLBACKEND=Agg
 python examples/truncated_inference.py --outdir results/truncated_inference
-python examples/auditory_learning.py --outdir results/auditory_learning
+python examples/auditory_learning.py --seed 2027 --trials 80 --outdir results/auditory_learning
 ```
 
-A compatible but unverified Python/JAX environment may work; do not silently treat it as covered by this validation. `JAX_PLATFORMS=cpu` prevents accidental selection of a GPU. For Windows/PyCharm activation paths, see [local setup](docs/local_pycharm_and_git.md). The scripts do not require network access or external datasets at runtime.
+The confirmed workstation environment used Python 3.13.18 and JAX/jaxlib 0.9.0.1. A compatible but unverified Python/JAX environment may work; do not silently treat it as covered by this validation. `JAX_PLATFORMS=cpu` prevents accidental selection of a GPU. For Windows/PyCharm activation paths, see [local setup](docs/local_pycharm_and_git.md). The scripts do not require network access or external datasets at runtime.
 
 ## Test and build
 
 ```bash
 python -m compileall -q src tests examples
 python -m pytest -q
-python -m pip wheel --no-deps --no-build-isolation -w dist .
+python -m pip wheel --no-deps -w dist .
 ```
 
-Run `bash scripts/validate_local.sh` to execute the same local checks and both examples. Test results must be reported for each tested environment and exact commit; **GitHub Actions should be considered unverified until its run is observed on the future private repository**.
+Run `bash scripts/validate_local.sh` to execute the same local checks and both examples. The development and separate fresh-clone Conda environments on Pop!_OS passed 28 tests, and **Curated CPU validation #2 passed on GitHub Actions at commit `58fb9855f54ad2c07feb8e8363575dce933a732a`** (owner-supplied logs/screenshots, 20 November 2026). The successful CI run predates this documentation patch: rerun CI on the new commit before claiming that revision is verified.
 
 ## What these experiments demonstrate
 
@@ -72,7 +72,7 @@ The proposed doctoral work would test whether experimentally constrained process
 - [Synthetic experimental design](docs/experimental_design.md)
 - [Validation procedure](docs/validation.md) and [results/limitations](docs/results_and_limitations.md)
 - [Source provenance](docs/provenance.md) and [file-by-file manifest](docs/file_manifest.md)
-- [PyCharm/Git synchronisation and local validation](docs/local_pycharm_and_git.md)
+- [PyCharm/Git synchronisation and local validation](docs/local_pycharm_and_git.md) and [optional GPU validation](docs/gpu_validation.md)
 - [Licensing and privacy release gate](docs/attribution_and_licensing.md)
 
 **Release status: PRIVATE STAGING. Do not make public without a new explicit approval after all checks.**

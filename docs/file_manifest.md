@@ -30,10 +30,11 @@ See machine-readable [`source_hashes.json`](source_hashes.json) for SHA256 hashe
 | Staged path | Treatment |
 | --- | --- |
 | `README.md`, `pyproject.toml`, `.gitignore`, `CITATION.cff`, `LICENSE` | New, self-contained project metadata and instructions, including the selected MIT licence; source ownership and public-release approval still require review |
-| `constraints-cpu.txt`, `.github/workflows/tests.yml` | Tested CPU package versions and proposed CI (GitHub-run pending) |
+| `constraints-cpu.txt`, `.github/workflows/tests.yml` | Tested CPU package versions and GitHub Actions CPU workflow (run #2 passed at `58fb985`, 20 November 2026) |
 | `examples/__init__.py`, `examples/truncated_inference.py`, `examples/auditory_learning.py` | Small example wrappers; original algorithms unchanged |
 | `tests/test_curated_examples.py` | Independent checks of both examples and their outputs |
 | `scripts/validate_local.sh`, `scripts/sync_local.sh` | Local CPU test/build and safe Git sync commands |
+| `scripts/validate_gpu.sh`, `scripts/check_gpu_backend.py`, `docs/gpu_validation.md` | Optional CUDA-only diagnostic and local GPU validation instructions; no scientific model changes |
 | `docs/mathematical_model.md`, `docs/experimental_design.md`, `docs/results_and_limitations.md`, `docs/exploratory_forecasting.md` | Concise science, negative controls, and historical forecast outcome |
 | `docs/provenance.md`, `docs/file_manifest.md`, `docs/attribution_and_licensing.md`, `docs/local_pycharm_and_git.md`, `docs/validation.md` | Audit, local workflow, reproducibility and publication gate |
 
