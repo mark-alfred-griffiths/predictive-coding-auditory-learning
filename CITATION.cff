@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If citing this synthetic computational demonstration, please cite this repository and note its experimental scope."
+title: "Predictive Coding, Truncated Inference and Auditory Learning"
+type: software
+authors:
+  - family-names: Griffiths
+    given-names: Mark A.
+version: 0.1.0
+abstract: "Curated synthetic Gaussian predictive-coding inference, feedback-dependent auditory learning, and matched-accumulator limitations."

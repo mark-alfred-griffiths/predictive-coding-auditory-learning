@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "predictive-coding-auditory-learning"
+version = "0.1.0"
+description = "Curated reproducible synthetic demonstrations of predictive coding, truncated inference, and subsequent auditory learning"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["jax>=0.4.38", "numpy>=1.24", "matplotlib>=3.7"]
+authors = [{ name = "Mark A. Griffiths" }]
+keywords = ["computational neuroscience", "predictive coding", "auditory learning", "reproducibility"]
+classifiers = ["Programming Language :: Python :: 3", "Intended Audience :: Science/Research", "License :: Other/Proprietary License"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

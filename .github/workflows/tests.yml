@@ -1,0 +1,36 @@
+name: Curated CPU validation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  cpu-validation:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install curated package (verified numerical versions)
+        run: python -m pip install -e '.[test]' -c constraints-cpu.txt
+      - name: Syntax, maths, causality, reproducibility tests
+        env:
+          JAX_PLATFORMS: cpu
+          JAX_ENABLE_X64: '1'
+          MPLBACKEND: Agg
+        run: |
+          python scripts/check_source_hashes.py
+          python -m compileall -q src tests examples
+          python -m pytest -q
+      - name: Run standard examples from this checkout
+        env:
+          JAX_PLATFORMS: cpu
+          JAX_ENABLE_X64: '1'
+          MPLBACKEND: Agg
+        run: |
+          python examples/truncated_inference.py --outdir results/truncated_inference
+          python examples/auditory_learning.py --seed 2027 --trials 80 --outdir results/auditory_learning
+      - name: Verify package wheel builds
+        run: python -m pip wheel --no-deps --no-build-isolation -w dist .

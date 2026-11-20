@@ -1,0 +1,7 @@
+# Versions exercised in the 2026-11-20 Linux CPU validation, Python 3.13.5.
+# Constrain only key numerical/test packages; transitive dependencies are not locked.
+jax==0.9.0.1
+jaxlib==0.9.0.1
+numpy==2.3.5
+matplotlib==3.10.8
+pytest==9.0.2

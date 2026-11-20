@@ -1,0 +1,96 @@
+{
+  "source_repo": "mark-alfred-griffiths/ubel-jpc",
+  "source_main_commit": "7626b1397c802ee97d3ded30ec83e29e594e55b3",
+  "file_hashes": [
+    {
+      "curated_path": "docs/source_phase2_specification.md",
+      "original_path": "docs/phase2_model_specification.md",
+      "sha256": "a5ba637177e9eb9dd8e9164f517b9b9107fb7656aecd3f63efee8956f7353034"
+    },
+    {
+      "curated_path": "src/ubel_jpc/__init__.py",
+      "original_path": "src/ubel_jpc/__init__.py",
+      "sha256": "87108e875216615acedc305d97dc8b33d62a7c81584b821cd5b3a5807a8ab655"
+    },
+    {
+      "curated_path": "src/ubel_jpc/experiments/__init__.py",
+      "original_path": "src/ubel_jpc/experiments/__init__.py",
+      "sha256": "d9094e48ce6af8a918d9d9236652b9d03af7bc3b65c45e6198710d841c024384"
+    },
+    {
+      "curated_path": "src/ubel_jpc/experiments/learning_and_probes.py",
+      "original_path": "src/ubel_jpc/experiments/learning_and_probes.py",
+      "sha256": "7caf24a1e0f11fd770e11e01e35fd48cdb547af687aba1dd14de23eb3865b875"
+    },
+    {
+      "curated_path": "src/ubel_jpc/experiments/phase2_diagnostics.py",
+      "original_path": "src/ubel_jpc/experiments/phase2_diagnostics.py",
+      "sha256": "b766d293251b05c8e2d955aef615a8042cceac702fc09fec32d8903de94e4a30"
+    },
+    {
+      "curated_path": "src/ubel_jpc/models/__init__.py",
+      "original_path": "src/ubel_jpc/models/__init__.py",
+      "sha256": "d9094e48ce6af8a918d9d9236652b9d03af7bc3b65c45e6198710d841c024384"
+    },
+    {
+      "curated_path": "src/ubel_jpc/models/analytic_gaussian.py",
+      "original_path": "src/ubel_jpc/models/analytic_gaussian.py",
+      "sha256": "fa4955a8f0ccfd4099f253f8e49f1b6cc4e2265e1ebeb806c4675c008f6fd4bf"
+    },
+    {
+      "curated_path": "src/ubel_jpc/models/bayesian.py",
+      "original_path": "src/ubel_jpc/models/bayesian.py",
+      "sha256": "be1edb88be06ded176c7e67a74dd10c04b774f549568f173be69d7d312bf3fa5"
+    },
+    {
+      "curated_path": "src/ubel_jpc/models/coupled_pc.py",
+      "original_path": "src/ubel_jpc/models/coupled_pc.py",
+      "sha256": "0957833b32c5a58441721c0a67fd84cd9ef1d09d412e8a1955b4f182f4ecc11f"
+    },
+    {
+      "curated_path": "src/ubel_jpc/models/feedback_learning.py",
+      "original_path": "src/ubel_jpc/models/feedback_learning.py",
+      "sha256": "4ad6fa8d9f3ab9d316d67f0aad9720f31c068ce65e32782bc63adfa9de29f5bc"
+    },
+    {
+      "curated_path": "src/ubel_jpc/models/jpc_adapter.py",
+      "original_path": "src/ubel_jpc/models/jpc_adapter.py",
+      "sha256": "cf7fe94bebd97f744017633365b88b57da487690a54fce4698af5802df25f6f9"
+    },
+    {
+      "curated_path": "src/ubel_jpc/schemas.py",
+      "original_path": "src/ubel_jpc/schemas.py",
+      "sha256": "b1d201ee4a20ea98dd7b26a8592006b4c5eb6ca6e2cc2c092bf3c4935ae5d9ac"
+    },
+    {
+      "curated_path": "src/ubel_jpc/task.py",
+      "original_path": "src/ubel_jpc/task.py",
+      "sha256": "b577a027ab1e286bf0b598a279f8f10bf6dc2d4c4fb72741347695b80a13fcfa"
+    },
+    {
+      "curated_path": "tests/test_analytic_posterior.py",
+      "original_path": "tests/test_analytic_posterior.py",
+      "sha256": "95b3a17bc0ab70d1018c00c38f1416751dc907f75a5d86ed79f494b06db1f1f5"
+    },
+    {
+      "curated_path": "tests/test_coupled_pc.py",
+      "original_path": "tests/test_coupled_pc.py",
+      "sha256": "331268672871721edda7bcacda184099438d6273275031047c13834a032f8a6e"
+    },
+    {
+      "curated_path": "tests/test_equivalence.py",
+      "original_path": "tests/test_equivalence.py",
+      "sha256": "b920436ad0c7a8b1903b795df86304393d0c040ff986f7b68639c29ebc6a6cba"
+    },
+    {
+      "curated_path": "tests/test_feedback_learning.py",
+      "original_path": "tests/test_feedback_learning.py",
+      "sha256": "9cf5d40c0c9e3c8023777b8bb9eb296db184e7b42b280ce02093d4970851744e"
+    },
+    {
+      "curated_path": "tests/test_probe_and_causality.py",
+      "original_path": "tests/test_probe_and_causality.py",
+      "sha256": "4f197f495e421cd138a29832978a11ec428bbbe7053ec7e1804347e0e04e7327"
+    }
+  ]
+}
