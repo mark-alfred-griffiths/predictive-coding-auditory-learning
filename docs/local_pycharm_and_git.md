@@ -2,9 +2,9 @@
 
 This is the intended **regular development workflow**, not only a one-off release test. Keep the private original `ubel-jpc` and the curated repository in **different directories and Git remotes**. Do not copy `.git` from the original project.
 
-## Clone the existing private GitHub remote
+## Clone the public curated GitHub repository
 
-The private GitHub repository already exists. The **preferred** setup for another machine is an ordinary clean clone:
+The public curated GitHub repository already exists. The **preferred** setup for another machine is an ordinary clean clone:
 
 ```bash
 mkdir -p ~/PycharmProjects
@@ -22,7 +22,7 @@ This SSH form requires configured SSH keys. With HTTPS authentication instead, u
 git clone https://github.com/mark-alfred-griffiths/predictive-coding-auditory-learning.git
 ```
 
-**Existing working copies:** the owner already established an upstream `origin/main` and an independent clean clone. Use `git pull --ff-only origin main` in each checkout, not `git init` and not another repository creation. Check `git remote -v` first; never add the old `ubel-jpc` as `origin`. Keep the GitHub repository private.
+**Existing working copies:** the owner already established an upstream `origin/main` and an independent clean clone. Use `git pull --ff-only origin main` in each checkout, not `git init` and not another repository creation. Check `git remote -v` first; never add the old `ubel-jpc` as `origin`. Keep the original `ubel-jpc` source repository private; this curated repository is public.
 
 ## PyCharm environment
 
@@ -33,7 +33,7 @@ git clone https://github.com/mark-alfred-griffiths/predictive-coding-auditory-le
 5. Set arguments to `--outdir results/truncated_inference` or `--seed 2027 --trials 80 --outdir results/auditory_learning`.
 6. Run tests via `python -m pytest -q` in the terminal or PyCharm's pytest runner. For reproducibility, save the terminal output and `git rev-parse HEAD` together.
 
-In the terminal you can execute `bash scripts/validate_local.sh`. The standard workflow is **CPU-only**, even on the NVIDIA RTX 3060 Ti machine. The owner independently tested the development and fresh-clone Conda environments (28/28 tests), and private GitHub Actions run #3 passed at `f7644b2`; the owner also validated a separate CUDA environment on RTX 3060 Ti (28 tests, five matching output files). For a separate CUDA-only check, follow [GPU validation](gpu_validation.md); do not modify the shared CPU environment or treat a CUDA test as new biological evidence.
+In the terminal you can execute `bash scripts/validate_local.sh`. The standard workflow is **CPU-only**, even on the NVIDIA RTX 3060 Ti machine. The owner independently tested the development and fresh-clone Conda environments (28/28 tests), and GitHub Actions run #3 passed at `f7644b2`; the owner also validated a separate CUDA environment on RTX 3060 Ti (28 tests, five matching output files). For a separate CUDA-only check, follow [GPU validation](gpu_validation.md); do not modify the shared CPU environment or treat a CUDA test as new biological evidence.
 
 ## Everyday pull/test/commit/push cycle
 
@@ -59,7 +59,7 @@ git commit -m "Document local review findings"
 bash scripts/sync_local.sh push
 ```
 
-Create a private pull request, let GitHub Actions run and review the diff before merging. Other machines should `git pull --ff-only` again before their next work session. If PyCharm and a terminal are open together, avoid simultaneous Git write operations in different windows.
+Create a pull request, let GitHub Actions run and review the diff before merging. Other machines should `git pull --ff-only` again before their next work session. If PyCharm and a terminal are open together, avoid simultaneous Git write operations in different windows.
 
 ## Keep experiments distinct from Git source
 
@@ -69,4 +69,4 @@ A SHA identifies a particular version. **A local pull changes the version**, so 
 
 ## Verify the remote and release state
 
-Use `git remote -v`, `git log -3 --oneline`, `git status -sb` and private GitHub Actions. Verify the target GitHub repository is still **private** in its settings. Only an explicit later release authorisation permits visibility change. Never edit the original private repository or its history to create the public project.
+Use `git remote -v`, `git log -3 --oneline`, `git status -sb` and GitHub Actions. Verify that the curated repository remains **public** and the original `ubel-jpc` remains **private**. Do not change either repository's visibility as part of local synchronisation. Never edit the original private repository or its history to create the public project.

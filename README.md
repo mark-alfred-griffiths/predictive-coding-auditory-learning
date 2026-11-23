@@ -50,11 +50,15 @@ python -m pytest -q
 python -m pip wheel --no-deps -w dist .
 ```
 
-Run `bash scripts/validate_local.sh` to execute the CPU checks and examples. The owner confirmed **28/28 CPU tests**, a separate CUDA-13 execution on the RTX 3060 Ti with **28/28 tests**, **18/18 original-source hashes**, and matching CPU/GPU results for five JSON/CSV outputs (`atol=rtol=1e-5`). **Curated CPU validation #3 passed on private GitHub Actions at commit `f7644b235d1a7f9b33acf7278e2c9b956c5e6e52`** (owner-supplied log/screenshots, 20 November 2026). The cited CI validation applies to the recorded historical commit; consult the repository's Actions tab for the status of later commits.
+Run `bash scripts/validate_local.sh` to execute the CPU checks and examples. The owner confirmed **28/28 CPU tests**, a separate CUDA-13 execution on the RTX 3060 Ti with **28/28 tests**, **18/18 original-source hashes**, and matching CPU/GPU results for five JSON/CSV outputs (`atol=rtol=1e-5`). A [public GitHub Actions CPU run](https://github.com/mark-alfred-griffiths/predictive-coding-auditory-learning/actions/runs/44817463925) succeeded at commit `7ba4366aedf176ae6c740c97864a1707783fe5dd` on 20 November 2026. Later commits require their own validation.
 
 ## What these experiments demonstrate
 
 The code illustrates mathematically controlled differences between finite and more extensive inference, the role of post-feedback settling, causal feedback updates, and changes in subsequent synthetic probe predictions. The closed-form Gaussian posterior and exact matched-accumulator equivalence supply strong correctness and negative controls.
+
+![Synthetic feedback-dependent parameter updates across pre- and post-feedback inference budgets](docs/figures/parameter_updates.png)
+
+*Figure: Synthetic K×L counterfactual using fixed inputs and parameters (feedback labels 0 and 1). K is the pre-feedback inference budget; L is additional post-feedback settling. In this scalar model, differences between K conditions diminish with extensive post-feedback settling. These are computational iterations, not human processing times or behavioural observations. The [existing example](examples/truncated_inference.py) generates this plot and its underlying `counterfactual_grid.csv`.*
 
 ## What these experiments do not demonstrate
 
@@ -64,7 +68,7 @@ The exploratory path-integral/low-rank forecasting extension is [summarised sepa
 
 ## Relation to proposed UBEL work
 
-The proposed doctoral work would test whether experimentally constrained processing intervals change **later** auditory categorisation using standardised no-feedback probes, and would compare predictive coding with equally capable accumulation and adaptive-learning alternatives. The present repo is a *reproducible synthetic preparation and validation demonstration*, not a result from that planned human experiment.
+The synthetic demonstrations show how finite pre-feedback inference and post-feedback settling can influence parameter updates and later categorisation predictions. However, an exactly matched evidence accumulator can reproduce the predictions of the scalar Gaussian predictive-coding model. The proposed PhD would therefore investigate task conditions in which plausible competing mechanisms make distinguishable predictions for subsequent auditory learning, using simulation and model-recovery analyses before human data collection. Such discrimination has not yet been established.
 
 ## Read more
 
